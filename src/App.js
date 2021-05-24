@@ -22,7 +22,7 @@ function App() {
   const classes = useStyles();
 
   function apiCall() {
-    axios.get(`http://localhost:5000/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
+    axios.get(`https://metric-2-freedom-api.herokuapp.com/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
       headers: {
         'Access-Control-Allow-Origin': true,
         crossdomain: true
