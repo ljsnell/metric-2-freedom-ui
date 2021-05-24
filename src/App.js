@@ -1,12 +1,26 @@
 import './App.css';
 import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+
 const axios = require('axios');
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    margin: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
+}));
 
 function App() {
   const [apiResponse, setApiResponse] = useState('No Data Yet')
   const [numberToConvert, setNumberToConvert] = useState(1776)
   const [metricUnit, setMetricUnit] = useState('km')
   const [fUnit, setFUnit] = useState('g')
+
+  const classes = useStyles();
+
   function apiCall() {
     axios.get(`http://localhost:5000/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
       headers: {
@@ -25,14 +39,9 @@ function App() {
       )
   }
   return (
-    <div>
+    <div className={classes.paper}>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div className="container">
-          <a href="#" className="navbar-brand mr-3">Metric 2 Freedom Converter</a>
-          <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
+        <div>Metric 2 Freedom Converter</div>
       </nav>
       <div className="container">
         <div className="jumbotron">
