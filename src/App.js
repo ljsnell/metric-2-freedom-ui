@@ -36,7 +36,7 @@ function App() {
       </nav>
       <div className="container">
         <div className="jumbotron">
-          <p className="lead">Luke Confused and enraged by the metric system? You're not alone, just toss those strange units
+          <p className="lead">Confused and enraged by the metric system? You're not alone, just toss those strange units
           in below and
                 let us convert 'em to units we're all familiar with!</p>
           <div className="form-group">
