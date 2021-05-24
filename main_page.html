@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Metric 2 Freedom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <div class="container">
+            <a href="#" class="navbar-brand mr-3">Metric 2 Freedom Converter</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <p class="lead">Confused by the metric system? You're not alone, just toss those strange units in below and
+                let us convert 'em to units we're all familiar with!</p>
+            <form>
+                <div class="form-group">
+                    <label for="metric_Number">Unit Count</label>
+                    <input type="number" class="form-control" id="unitCountInput" placeholder="1776">
+                </div>
+                <div class="form-group">
+                    <label for="MetricTypeSelection">Metric Unit Type</label>
+                    <select class="form-control" id="metricUnitTypeSelector">
+                        <option value="km">Kilometers (km)</option>
+                        <option value="m">Meters (m)</option>
+                    </select>
+                    <label for="MetricTypeSelection">Freedom Unit Type</label>
+                    <select class="form-control" id="freedomUnitTypeSelector">
+                        <option value="g">Glock</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Convert!</button>
+            </form>
+        </div>
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>4 Fun Region 🏈</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
