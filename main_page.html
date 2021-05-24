@@ -17,7 +17,9 @@
         function webserviceCall() {
             $.ajax({
                 crossdomain: true,
-                type: "GET", url: "http://localhost:5000/convert?number=200&metric_unit=cm&f_utype=g", success: function (r) { alert(r[0].connote); }
+                type: "GET",
+                url: "http://localhost:5000/convert?number=200&metric_unit=cm&f_utype=g",
+                success: function (r) { alert(r[0].connote); }
             });
         }
     </script>
