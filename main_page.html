@@ -13,6 +13,14 @@
 </head>
 
 <body>
+    <script>
+        function webserviceCall() {
+            $.ajax({
+                crossdomain: true,
+                type: "GET", url: "http://localhost:5000/convert?number=200&metric_unit=cm&f_utype=g", success: function (r) { alert(r[0].connote); }
+            });
+        }
+    </script>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
         <div class="container">
             <a href="#" class="navbar-brand mr-3">Metric 2 Freedom Converter</a>
@@ -23,7 +31,8 @@
     </nav>
     <div class="container">
         <div class="jumbotron">
-            <p class="lead">Confused by the metric system? You're not alone, just toss those strange units in below and
+            <p class="lead">Confused and enraged by the metric system? You're not alone, just toss those strange units
+                in below and
                 let us convert 'em to units we're all familiar with!</p>
             <form>
                 <div class="form-group">
@@ -41,7 +50,7 @@
                         <option value="g">Glock</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Convert!</button>
+                <button type="submit" class="btn btn-primary" onclick="webserviceCall();">Convert!</button>
             </form>
         </div>
         <hr>
