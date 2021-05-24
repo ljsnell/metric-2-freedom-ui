@@ -4,8 +4,11 @@ const axios = require('axios');
 
 function App() {
   const [apiResponse, setApiResponse] = useState('No Data Yet')
-  function apiCall(number, m_unit, f_unit) {
-    axios.get(`http://localhost:5000/convert?number=${number}&metric_unit=${m_unit}&f_utype=${f_unit}`, {
+  const [numberToConvert, setNumberToConvert] = useState(1776)
+  const [metricUnit, setMetricUnit] = useState('km')
+  const [fUnit, setFUnit] = useState('g')
+  function apiCall() {
+    axios.get(`http://localhost:5000/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
       headers: {
         'Access-Control-Allow-Origin': true,
         crossdomain: true
@@ -38,16 +41,16 @@ function App() {
                 let us convert 'em to units we're all familiar with!</p>
           <div className="form-group">
             <label htmlFor="metric_Number">Unit Count</label>
-            <input type="number" className="form-control" id="unitCountInput" placeholder="1776" />
+            <input onChange={(e) => setNumberToConvert(e.target.value)} type="number" className="form-control" id="unitCountInput" placeholder="1776" />
           </div>
           <div className="form-group">
             <label htmlFor="MetricTypeSelection">Metric Unit Type</label>
-            <select className="form-control" id="metricUnitTypeSelector">
+            <select onChange={(e) => setMetricUnit(e.target.value)} className="form-control" id="metricUnitTypeSelector">
               <option value="km">Kilometers (km)</option>
               <option value="m">Meters (m)</option>
             </select>
             <label htmlFor="MetricTypeSelection">Freedom Unit Type</label>
-            <select className="form-control" id="freedomUnitTypeSelector">
+            <select onChange={(e) => setFUnit(e.target.value)} className="form-control" id="freedomUnitTypeSelector">
               <option value="g">Glock</option>
             </select>
           </div>
@@ -55,13 +58,6 @@ function App() {
           <div>{apiResponse}</div>
         </div>
         <hr />
-        <footer>
-          <div className="row">
-            <div className="col-md-6">
-              <p>4 Fun Region 🏈</p>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );
