@@ -18,7 +18,7 @@ function App() {
   const [apiResponse, setApiResponse] = useState(' ')
   const [numberToConvert, setNumberToConvert] = useState(1776)
   const [metricUnit, setMetricUnit] = useState('km')
-  const [fUnit, setFUnit] = useState('g')
+  const [fUnit, setFUnit] = useState('bmac')
 
   const classes = useStyles();
 
@@ -70,7 +70,7 @@ function App() {
               <option value="pdrone">Predator Drone</option>
             </select>
           </div>
-          <button className="btn btn-primary" onClick={() => apiCall(200, 'cm', 'g')}>Convert!</button>
+          <button className="btn btn-primary" onClick={() => apiCall()}>Convert!</button>
           <div>{apiResponse}</div>
         </div>
         <hr />
