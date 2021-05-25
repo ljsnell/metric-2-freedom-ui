@@ -24,6 +24,7 @@ function App() {
 
   function apiCall() {
     axios.get(`https://metric-2-freedom-api.herokuapp.com/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
+      // axios.get(`http://localhost:5000/convert?number=${numberToConvert}&metric_unit=${metricUnit}&f_utype=${fUnit}`, {
       headers: {
         'Access-Control-Allow-Origin': true,
         crossdomain: true
@@ -64,6 +65,7 @@ function App() {
             <label htmlFor="MetricTypeSelection">Freedom Type: </label>
             <select onChange={(e) => setFUnit(e.target.value)} className="form-control" id="freedomUnitTypeSelector">
               <option value="g">Glock</option>
+              <option value="ar15">AR-15</option>
             </select>
           </div>
           <button className="btn btn-primary" onClick={() => apiCall(200, 'cm', 'g')}>Convert!</button>
