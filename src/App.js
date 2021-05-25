@@ -64,6 +64,7 @@ function App() {
             <div></div>
             <label htmlFor="MetricTypeSelection">Freedom Type: </label>
             <select onChange={(e) => setFUnit(e.target.value)} className="form-control" id="freedomUnitTypeSelector">
+              <option value="bmac">Big Mac</option>
               <option value="g">Glock</option>
               <option value="ar15">AR-15</option>
               <option value="pdrone">Predator Drone</option>
