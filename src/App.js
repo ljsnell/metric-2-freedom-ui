@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import americanFlag from './american-flag.jpg'
 
 const axios = require('axios');
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
-  const [apiResponse, setApiResponse] = useState('No Data Yet')
+  const [apiResponse, setApiResponse] = useState(' ')
   const [numberToConvert, setNumberToConvert] = useState(1776)
   const [metricUnit, setMetricUnit] = useState('km')
   const [fUnit, setFUnit] = useState('g')
@@ -40,6 +41,7 @@ function App() {
   }
   return (
     <div className={classes.paper}>
+      <header><img src={americanFlag} alt="America!" /></header>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-3">
         <div>Metric 2 Freedom Converter</div>
       </nav>
@@ -49,16 +51,17 @@ function App() {
           in below and
                 let us convert 'em to units we're all familiar with!</p>
           <div className="form-group">
-            <label htmlFor="metric_Number">Unit Count</label>
+            <label htmlFor="metric_Number">Unit Count: </label>
             <input onChange={(e) => setNumberToConvert(e.target.value)} type="number" className="form-control" id="unitCountInput" placeholder="1776" />
           </div>
           <div className="form-group">
-            <label htmlFor="MetricTypeSelection">Metric Unit Type</label>
+            <label htmlFor="MetricTypeSelection">Metric Type: </label>
             <select onChange={(e) => setMetricUnit(e.target.value)} className="form-control" id="metricUnitTypeSelector">
               <option value="km">Kilometers (km)</option>
               <option value="m">Meters (m)</option>
             </select>
-            <label htmlFor="MetricTypeSelection">Freedom Unit Type</label>
+            <div></div>
+            <label htmlFor="MetricTypeSelection">Freedom Type: </label>
             <select onChange={(e) => setFUnit(e.target.value)} className="form-control" id="freedomUnitTypeSelector">
               <option value="g">Glock</option>
             </select>
