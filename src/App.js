@@ -66,6 +66,7 @@ function App() {
             <select onChange={(e) => setFUnit(e.target.value)} className="form-control" id="freedomUnitTypeSelector">
               <option value="g">Glock</option>
               <option value="ar15">AR-15</option>
+              <option value="pdrone">Predator Drone</option>
             </select>
           </div>
           <button className="btn btn-primary" onClick={() => apiCall(200, 'cm', 'g')}>Convert!</button>
