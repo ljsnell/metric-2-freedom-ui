@@ -60,6 +60,7 @@ function App() {
             <select onChange={(e) => setMetricUnit(e.target.value)} className="form-control" id="metricUnitTypeSelector">
               <option value="km">Kilometers (km)</option>
               <option value="m">Meters (m)</option>
+              <option value="cm">Centimeters (cm)</option>
             </select>
             <div></div>
             <label htmlFor="MetricTypeSelection">Freedom Type: </label>
